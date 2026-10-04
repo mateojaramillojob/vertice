@@ -63,6 +63,16 @@ export const repositorioMock: Repositorio = {
     for (const p of PRENDAS) conteo[p.categoria] = (conteo[p.categoria] ?? 0) + 1;
     return red(conteo, 200);
   },
+  listarCategorias() {
+    const categorias = [...new Set(PRENDAS.map((p) => p.categoria))];
+    return red(
+      categorias.map((categoria) => {
+        const deCategoria = PRENDAS.filter((p) => p.categoria === categoria);
+        return { categoria, total: deCategoria.length, foto: deCategoria[0].fotos[0] };
+      }),
+      250,
+    );
+  },
   obtenerPrenda(id) {
     return red(PRENDAS.find((p) => p.id === id) ?? null);
   },

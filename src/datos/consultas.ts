@@ -7,11 +7,12 @@ import type { FiltrosCatalogo, Pagina, Prenda } from "./tipos";
 /** 8 por página: la primera coincide con el mockup (4 por columna). */
 export const TAM_PAGINA = 8;
 
-export function useCatalogo(filtros: FiltrosCatalogo) {
+export function useCatalogo(filtros: FiltrosCatalogo, { activo = true }: { activo?: boolean } = {}) {
   const qc = useQueryClient();
   const clave = ["catalogo", filtros];
   const consulta = useInfiniteQuery({
     queryKey: clave,
+    enabled: activo,
     queryFn: ({ pageParam }) => repositorio.listarPrendas(filtros, pageParam, TAM_PAGINA),
     initialPageParam: null as string | null,
     getNextPageParam: (ultima) => ultima.siguiente,
@@ -36,6 +37,10 @@ export function useContarPrendas(filtros: FiltrosCatalogo) {
 
 export function useConteoCategorias() {
   return useQuery({ queryKey: ["conteo-categorias"], queryFn: () => repositorio.conteoPorCategoria() });
+}
+
+export function useCategorias() {
+  return useQuery({ queryKey: ["categorias"], queryFn: () => repositorio.listarCategorias() });
 }
 
 export function usePrenda(id: string | undefined) {

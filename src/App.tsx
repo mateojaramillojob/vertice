@@ -11,6 +11,8 @@ import NoEncontrada from "@/pantallas/NoEncontrada";
 const CatalogoUI = lazy(() => import("@/pantallas/CatalogoUI"));
 const Pendiente = lazy(() => import("@/pantallas/Pendiente"));
 const Detalle = lazy(() => import("@/pantallas/Detalle"));
+const Busqueda = lazy(() => import("@/pantallas/Busqueda"));
+const Explorar = lazy(() => import("@/pantallas/Explorar"));
 
 const consultas = new QueryClient({
   defaultOptions: { queries: { staleTime: 60_000, retry: 1, refetchOnWindowFocus: false } },
@@ -37,13 +39,13 @@ const rutas = createBrowserRouter(
           element: <MarcoPestanas />,
           children: [
             { index: true, element: <Inicio /> },
-            { path: "explorar", element: perezosa(<Pendiente titulo="Explorar" />) },
+            { path: "explorar", element: perezosa(<Explorar />) },
             { path: "guardados", element: perezosa(<Pendiente titulo="Guardados" />) },
             { path: "perfil", element: perezosa(<Pendiente titulo="Perfil" />) },
           ],
         },
         { path: "prenda/:id", element: perezosa(<Detalle />) },
-        { path: "buscar", element: perezosa(<Pendiente titulo="Búsqueda" pantalla />) },
+        { path: "buscar", element: perezosa(<Busqueda />) },
         { path: "notificaciones", element: perezosa(<Pendiente titulo="Notificaciones" pantalla />) },
         { path: "bolsa", element: perezosa(<Pendiente titulo="Bolsa" pantalla />) },
         { path: "vender", element: perezosa(<Pendiente titulo="Vender" pantalla />) },

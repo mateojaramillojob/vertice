@@ -101,3 +101,32 @@ Capturas: `propuesta-detalle-390-*.jpg`.
 - Inicio → dos toques → miniatura del sheet → detalle. El sheet se cierra y el body no queda bloqueado.
 - Guardar desde el header comparte estado con la tarjeta.
 - Estado de carga (esqueleto) y "Prenda no disponible" con un id inexistente.
+
+## Filtros, Búsqueda (`/buscar`) y Explorar (`/explorar`) 🟠 propuesta
+
+Capturas: `propuesta-filtros-390.jpg`, `propuesta-busqueda-390-*.jpg`, `propuesta-explorar-390.jpg`.
+
+**Filtros (bottom sheet):**
+- Se abren con el botón `tune` del buscador, que en el handoff no tenía destino; desde el Inicio, aplicar lleva a resultados.
+- Criterios: ordenar, categoría, talla, condición (agrupada desde el texto libre del handoff) y rango de precio.
+- Se edita un borrador; el botón muestra el conteo en vivo ("Ver 6 prendas") o se deshabilita si no hay resultados.
+- "Limpiar" vuelve al estado inicial.
+
+**Búsqueda:**
+- Los filtros viven en la URL (`?q=zara&tallas=M`).
+- Chips de filtros aplicados; tocar uno lo quita.
+- Búsquedas recientes en `localStorage`.
+- Sugerencias de categorías y marcas.
+- Resultados con la grilla de dos toques y scroll infinito.
+- Estados vacío y de error.
+
+**Explorar:**
+- Portadas por categoría, con la misma franja oscura del overlay de la tarjeta.
+- Rangos de precio y marcas con conteo.
+- Buscador que manda a `/buscar`.
+
+**Probado:**
+- Inicio → filtros: Talla M + Excelente da "Ver 6 prendas" y lleva a `/buscar?tallas=M&cond=excelente` con 6 resultados.
+- Quitar "Excelente" deja 12.
+- Buscar "zara" con talla M da 2.
+- La búsqueda reciente aparece al volver a `/buscar`.

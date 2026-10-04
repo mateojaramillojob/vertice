@@ -10,7 +10,9 @@ import { EncabezadoSeccion } from "@/componentes/EncabezadoSeccion";
 import { FilaCategorias } from "@/componentes/FilaCategorias";
 import { GrillaOffset } from "@/componentes/GrillaOffset";
 import { GrillaPrendas } from "@/componentes/GrillaPrendas";
+import { HojaFiltros } from "@/componentes/HojaFiltros";
 import { SubencabezadoCatalogo } from "@/componentes/SubencabezadoCatalogo";
+import { escribirFiltros } from "@/lib/filtrosUrl";
 import { BarraBusqueda } from "@/ui/BarraBusqueda";
 import { EstadoError, EstadoVacio } from "@/ui/Estados";
 
@@ -20,6 +22,8 @@ export default function Inicio() {
   const [texto, setTexto] = useState("");
   const [categoria, setCategoria] = useState<Categoria | null>(null);
   const [orden, setOrden] = useState<"curada" | "recientes">("curada");
+  // Propuesta: el botón `tune` del handoff abre los filtros; al aplicar se va a resultados.
+  const [filtrosAbiertos, setFiltrosAbiertos] = useState(false);
 
   const catalogo = useCatalogo({ categoria, orden });
   const prendas = catalogo.data?.pages.flatMap((p) => p.items) ?? [];
@@ -43,7 +47,7 @@ export default function Inicio() {
             valor={texto}
             onCambio={setTexto}
             onEnviar={(q) => q.trim() && navegar(`/buscar?q=${encodeURIComponent(q.trim())}`)}
-            onFiltros={() => navegar("/buscar?filtros=1")}
+            onFiltros={() => setFiltrosAbiertos(true)}
           />
           <FilaCategorias actual={categoria} onCambio={cambiarCategoria} />
           <SubencabezadoCatalogo orden={orden} onCambio={setOrden} />
@@ -80,6 +84,13 @@ export default function Inicio() {
           )}
         </section>
       </div>
+
+      <HojaFiltros
+        abierta={filtrosAbiertos}
+        onCambio={setFiltrosAbiertos}
+        filtros={{ texto, categoria, orden }}
+        onAplicar={(f) => navegar(`/buscar?${escribirFiltros({ ...f, texto })}`)}
+      />
     </>
   );
 }
