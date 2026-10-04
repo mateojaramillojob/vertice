@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.no-scrollbar::-webkit-scrollbar{display:none;}.no-scrollbar{-ms-overflow-style:none;scrollbar-width:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#0F172A",
+        "primary-light": "#1E293B",
+        "cobalt": "#2563EB",
+        "cobalt-light": "#3B82F6",
+        "on-primary": "#ffffff",
+        "surface": "#FAFAFA",
+        "surface-container": "#F1F5F9",
+        "surface-container-high": "#E2E8F0",
+        "surface-container-lowest": "#FFFFFF",
+        "on-surface": "#0F172A",
+        "on-surface-variant": "#64748B",
+        "outline-subtle": "#E2E8F0"
+      },
+      borderRadius: {
+        "DEFAULT": "0.125rem",
+        "lg": "0.375rem",
+        "xl": "0.75rem",
+        "2xl": "1rem",
+        "full": "9999px"
+      },
+      fontFamily: {
+        "headline": ["Bodoni Moda", "serif"],
+        "body": ["Inter", "sans-serif"],
+        "label": ["Space Grotesk", "sans-serif"],
+        "mono": ["Space Grotesk", "monospace"]
+      }
+    }
+  }
+};</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+      background-color: #FAFAFA;
+    }
+  </style></head><body class="bg-surface font-body text-on-surface flex flex-col min-h-screen antialiased"><header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl pt-safe border-b border-outline-subtle/80 shadow-[0_1px_10px_rgba(15,23,42,0.03)]"><div class="h-16 px-4 flex items-center justify-between gap-3"><div class="flex items-center gap-2"><span class="font-headline text-[22px] tracking-tight text-primary uppercase font-bold">VÉRTICE</span><div class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container border border-outline-subtle"><span class="text-[11px] leading-none">🇲🇽</span><span class="font-label text-[10px] font-semibold text-on-surface-variant uppercase tracking-wider">MXN</span></div></div><div class="flex items-center gap-1"><button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[21px]">search</span></button><button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors relative"><span class="material-symbols-outlined text-[21px]">notifications</span><span class="absolute top-2.5 right-2.5 w-1.5 h-1.5 rounded-full bg-cobalt"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-1 text-on-primary ring-2 ring-primary/10"><span class="material-symbols-outlined text-[17px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full text-on-surface">
+<!-- Micro-Banner Garantía Minimalista Azul Tinta -->
+<div class="w-full bg-surface-container border-b border-outline-subtle py-2 px-4 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-cobalt animate-pulse"></span>
+<span class="font-mono text-[11px] uppercase tracking-wider text-on-surface-variant font-medium">
+        Custodia Vértice: Inspección física garantizada · 48h
+      </span>
+</div>
+<span class="material-symbols-outlined text-[15px] text-cobalt">verified_user</span>
+</div>
+<!-- Controles y Buscador -->
+<div class="px-4 pt-3.5 pb-2 flex flex-col gap-3">
+<!-- Barra de búsqueda monocroma -->
+<div class="relative w-full">
+<div class="flex items-center bg-surface-container-lowest px-3.5 py-2.5 rounded-xl border border-outline-subtle/80 shadow-[0_2px_8px_rgba(15,23,42,0.03)]">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant mr-2.5">search</span>
+<input class="bg-transparent text-xs text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none w-full font-body" placeholder="Buscar por prenda, corte o tejido..." type="text"/>
+<button class="flex items-center justify-center p-1 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Píldoras de categoría horizontales -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5 text-xs font-label">
+<button class="px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-medium tracking-tight whitespace-nowrap shadow-sm">
+        Todas (48)
+      </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high border border-outline-subtle text-on-surface-variant tracking-tight whitespace-nowrap transition-colors">
+        Exterior
+      </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high border border-outline-subtle text-on-surface-variant tracking-tight whitespace-nowrap transition-colors">
+        Sastrería
+      </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high border border-outline-subtle text-on-surface-variant tracking-tight whitespace-nowrap transition-colors">
+        Denim
+      </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high border border-outline-subtle text-on-surface-variant tracking-tight whitespace-nowrap transition-colors">
+        Calzado
+      </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high border border-outline-subtle text-on-surface-variant tracking-tight whitespace-nowrap transition-colors">
+        Accesorios
+      </button>
+</div>
+<!-- Subheader de navegación y estado -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 text-xs font-label">
+<span class="text-on-surface font-semibold">Selección Curada</span>
+<span class="text-on-surface-variant/40">/</span>
+<span class="text-on-surface-variant hover:text-on-surface cursor-pointer text-[11px]">Recién Subido</span>
+</div>
+<div class="flex items-center gap-1 text-[11px] font-mono uppercase text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-cobalt"></span>
+<span>Stream Activo</span>
+</div>
+</div>
+</div>
+<!-- SECCIÓN 1: Stream Horizontal de Piezas Destacadas (Scroll Snap) -->
+<!-- SECCIÓN 2: Catálogo Modular Asimétrico (2 columnas escalonadas con aspecto dinámico) -->
+<div class="px-3 pt-2 pb-8"><div class="px-1 pb-3 flex items-baseline justify-between"><h2 class="font-headline text-sm font-semibold tracking-tight text-on-surface uppercase">Catálogo Verificado · Archivo Offset</h2><span class="font-mono text-[10px] text-cobalt font-medium flex items-center gap-0.5 tracking-wider uppercase">Vista Offset <span class="material-symbols-outlined text-[13px]">tune</span></span></div><div class="grid grid-cols-2 gap-3 items-start" id="productGrid"><div class="flex flex-col gap-3"><div class="product-card group relative bg-white rounded-xl overflow-hidden border border-outline-subtle/80 shadow-sm aspect-[3/4.4] flex flex-col justify-end cursor-pointer select-none" data-product='{"id": 1, "title": "Trench Oversize Gamuzado", "brand": "Massimo Dutti Studio", "size": "M", "cond": "Excelente (9.5/10)", "price": "$1,450 MXN", "detail": "100% piel de serraje vacuno suave. Sin detalles de uso visibles. Pieza de sastrería invernal con cinturón ancho y solapas estructuradas."}'><img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Editorial close up portrait of an elegant caramel brown suede oversized trench coat hanging against an ultra minimal pure white architectural background, high fashion lighting, stark contrast, sharp textured fabric" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBccISSi78Pty06kDJGxEvhPYHLN1zI5qCJczI8iMHZd8lxFbvXPX5xR537M1IvMDrBYfjtzwyPoLD4VTw5b_8cW7_n1vHbRTTPBzH0QAZWgB_sBR3xj08k1MdqngA5GkuQmtsAbEdOlnJnxuo17Q07zKMuUCu0ZMr2jbVuH3riLlCBYjeymG8zJf1mRzFbttDlZPL2ZFhz9fcLqvsTOiW6ikFq7ftdjjqsFVa-eHFxwqA_p9Z1JEc"/><div class="absolute top-2.5 left-2.5 z-10 bg-primary/80 backdrop-blur-md px-2 py-0.5 rounded-full flex items-center gap-1 text-[10px] font-mono text-white"><span class="w-1 h-1 rounded-full bg-cobalt-light animate-pulse"></span><span>Activo</span></div><button class="absolute top-2.5 right-2.5 z-10 w-7 h-7 rounded-full bg-primary/80 backdrop-blur-md flex items-center justify-center text-white"><span class="material-symbols-outlined text-[14px] info-icon">unfold_less</span></button><div class="product-overlay relative z-10 p-3 bg-primary/95 backdrop-blur-md text-white flex flex-col gap-1 transition-all duration-300 translate-y-0 opacity-100 rounded-b-xl border-t border-white/10"><div class="flex items-baseline justify-between"><span class="text-[11px] font-mono tracking-wider uppercase text-slate-300">Massimo Dutti</span><span class="text-[11px] font-mono bg-white/15 px-1.5 py-0.5 rounded font-bold">Talla M</span></div><p class="text-xs font-headline font-semibold truncate leading-tight">Trench Gamuzado</p><div class="flex items-center justify-between pt-1"><span class="text-sm font-bold tracking-tight text-white">$1,450 MXN</span><span class="text-[10px] font-mono uppercase underline flex items-center gap-0.5 text-cobalt-light">Comprar <span class="material-symbols-outlined text-[11px]">arrow_forward</span></span></div></div></div><div class="product-card group relative bg-white rounded-xl overflow-hidden border border-outline-subtle/80 shadow-sm aspect-[3/4.6] flex flex-col justify-end cursor-pointer select-none" data-product='{"id": 3, "title": "Pantalón Plisado Pinzas", "brand": "Arket Atelier", "size": "30 / M", "cond": "Excelente", "price": "$780 MXN", "detail": "Lana virgen fría con caída pesada. Tiro alto con pinzas dobles delanteras y dobladillo cónico impecable. Botones de cuerno natural."}'><img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Editorial product shot of folded charcoal grey pleated wool tailored trousers with sharp front creases on stark off-white flat background, minimalist high-end garment catalog" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPpkyyZq1ZyMpvDtU7_faebixfYYL9waJmmWU5W9YyO1rjWXFV5wEWnbA9oh3XBgYnfNYzPxXo5dwlkAubVi1mmLutllD5xbGAqlIuP4-uXTH1DIuQXx6rtkwT_hFxVMKCJvB3AzsYE_vVlKMNLNjrwPc4685Qssz9YnqaJqnrWiP7K9WmaHX18-JmcaceQs4jaj64deE-k-clkClWKTGvtD5mErzsGjiyExcpC4LzehMHZEbYps0"/><button class="absolute top-2.5 right-2.5 z-10 w-7 h-7 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-primary shadow-sm"><span class="material-symbols-outlined text-[15px]">bookmark_border</span></button></div><div class="product-card group relative bg-white rounded-xl overflow-hidden border border-outline-subtle/80 shadow-sm aspect-[3/3.8] flex flex-col justify-end cursor-pointer select-none" data-product='{"id": 5, "title": "Botín Chelsea Punta Cuadrada", "brand": "Acne Studios", "size": "41 EU", "cond": "Muy Bueno (8.8/10)", "price": "$2,100 MXN", "detail": "Piel curtida artesanal negra con suela vibram original colocada. Tacón cubano bajo de 3.5cm y elásticos laterales en tensión perfecta."}'><img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Pair of sculptural square toe jet black leather artisan chelsea ankle boots positioned on white polished stone pedestal, minimal shadows, studio catalog photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHmRPwv63JlsXMAmo9tWpV9Iyt1IF4sNRuxESSTSpZjq8l_Klx_YXu1nXjrNRmX91tWgDk_ksATF6kAp5GyfkGqKnSXm6Odf6AHAYknL9JwJBwMk9uau_LJEns-q0DwUYgk4An66Uq27Ci4VrSxI0ZDCEjlxpnDj_ZeP4Q2dpM9shLWBVPf8TUfVshnO1bgD9BA7HnmUOrUg-kjksq1nAEAhOxSX-0JN21llmaUBgki1BmIpyobNM"/><button class="absolute top-2.5 right-2.5 z-10 w-7 h-7 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-primary shadow-sm"><span class="material-symbols-outlined text-[15px]">bookmark_border</span></button></div><div class="product-card group relative bg-white rounded-xl overflow-hidden border border-outline-subtle/80 shadow-sm aspect-[3/4.4] flex flex-col justify-end cursor-pointer select-none" data-product='{"id": 7, "title": "Cazadora Vintage Piel Envejecida", "brand": "Schott NYC Archive", "size": "L", "cond": "Pátina Original (9/10)", "price": "$2,850 MXN", "detail": "Piel bovina envejecida con grano marcado y cremalleras de bronce macizo. Cuello tipo bomber con remate elástico."}'><img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Photographic fashion still life of an authentic patina dark brown distressed leather bomber jacket flat-lay on bright chalk-white stone floor, crisp details, zero clutter, high fashion curation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDght_KgQ6IFfvGIX4N8HrNtjglNuIwNnQCXIqF4PkDBGsYO1THF5eJc6ealMOKxTYZrcxEogxXLY_VLFYetmeuJkfl_t5SaKLnrHY5kSpJD9zfO2gm6xBqPc9RBza3JHIyxkihtFzzNAYt6r0v7D99N_EYNHjxWckK1gkg0vmtidA75QnxIzODTzxmOj0hzxzq8hIHj7wlpql4cRH92WbOILIZ8Er4nbqyjZt6pAjUWBdSxz6IizY"/><button class="absolute top-2.5 right-2.5 z-10 w-7 h-7 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-primary shadow-sm"><span class="material-symbols-outlined text-[15px]">bookmark_border</span></button></div></div><div class="flex flex-col gap-3 pt-6"><div class="product-card group relative bg-white rounded-xl overflow-hidden border border-outline-subtle/80 shadow-sm aspect-[3/4.6] flex flex-col justify-end cursor-pointer select-none" data-product='{"id": 2, "title": "Vestido Lino Estructurado", "brand": "COS Archive", "size": "S", "cond": "Como nuevo", "price": "$890 MXN", "detail": "Lino orgánico peso medio sin teñir, escote recto geométrico y silueta arquitectónica minimalista. Cierre oculto en espalda."}'><img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Minimalist natural raw cream ivory linen column dress displayed on invisible mannequin against pure stark white daylight studio setting, contemporary Japanese neo-brutalist textile photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS5zzAfl21NJ6db_-k7fEgTE7D-X6pM8YyOdlAoMeEdIuzDtwNbhUZMKyq9ZxYlwDgSUVtRolhhibUkJzp_AZoIP4V8HCmVIrYgRAQdSgwosPaSR24yxoVviLqMms1-VzJzB18VviNOtcd3wQLsCZ83GURFrPiZBBtxaoKCeocgR81aQMXjpZjUvWoUGNysOOUS79ibp2tIY3Ey9CSxV52UKCFo9nQAgzBCcXyqFg8IDEv4eIObJo"/><button class="absolute top-2.5 right-2.5 z-10 w-7 h-7 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-primary shadow-sm"><span class="material-symbols-outlined text-[15px]">bookmark_border</span></button></div><div class="product-card group relative bg-white rounded-xl overflow-hidden border border-outline-subtle/80 shadow-sm aspect-[3/4.1] flex flex-col justify-end cursor-pointer select-none" data-product='{"id": 4, "title": "Blazer Cuadro Terra", "brand": "Dries Van Noten (Arch)", "size": "L", "cond": "Impecable", "price": "$3,200 MXN", "detail": "Pieza coleccionable de sarga pesada en tono óxido tostado. Hombro estructurado y forro interior de cupro en contraste. Edición verificada."}'><img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Rich rust terracotta tailored oversized designer wool blazer draped gracefully in clean geometric form against high-key pure white gallery space, refined shadows, editorial fashion photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYD4pRDSvQ8SOt44nn3UdP4DyIe7riNFPh8AyxyN37DhAU3774tGQPVvZ7UWHbg-taA2cHTRPCEpWGucAU1Drr5E47wIeUm6n30KzVyknrVK3RSc4GKxxxnq913AiKCnhD-i9NIMXJzt6sEE9uP5M_-rrSuxERWHcQ0rH1v9qQ9VpJaOrWW38kcukbyTe5GQiUDzhQ5jfxoLa_2h5-Hm6Ipv2ZOSwSJTyJ7mxV8rhyexVADd3tAVI"/><button class="absolute top-2.5 right-2.5 z-10 w-7 h-7 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-primary shadow-sm"><span class="material-symbols-outlined text-[15px]">bookmark_border</span></button></div><div class="product-card group relative bg-white rounded-xl overflow-hidden border border-outline-subtle/80 shadow-sm aspect-[3/3.8] flex flex-col justify-end cursor-pointer select-none" data-product='{"id": 6, "title": "Bolso Baguette Cuero Oliva", "brand": "Lemaire", "size": "Única", "cond": "Impecable con guardapolvo", "price": "$4,600 MXN", "detail": "Cuero suave curtido en aceite vegetal color verde oliva profundo. Forro de lona de algodón natural. Incluye certificado de autenticidad Vértice."}'><img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Sculptural dark olive green leather crescent shoulder bag isolated on seamless pristine white background, soft architectural form, high end editorial second hand luxury fashion" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk4GKn7RyhxMcIWuAqu2TKFytxII9YTAf7U9lM7PMMhTpwfvYRJJ0s1iqPNTPfOQAY0bhrOhlF1wO4LKbd99Zl-1Bq6wPrKBHFD_NVe0amkGLX53hN2KBfwzlSf9FW2Z61Og5owdFk1dgRTTUrZMwTX37pVf4kNjIIGJ-3CFU0q7bF-sCJpLljSXAm6tLL5l0Jj85Br30h-zPMBNpviwH6x2O6S0u80pThud4TphLflkFZ8iMGHf0"/><button class="absolute top-2.5 right-2.5 z-10 w-7 h-7 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-primary shadow-sm"><span class="material-symbols-outlined text-[15px]">bookmark_border</span></button></div><div class="product-card group relative bg-white rounded-xl overflow-hidden border border-outline-subtle/80 shadow-sm aspect-[3/4.2] flex flex-col justify-end cursor-pointer select-none" data-product="{&quot;id&quot;: 8, &quot;title&quot;: &quot;Jeans Selvedge Índigo&quot;, &quot;brand&quot;: &quot;Studio D'Artisan&quot;, &quot;size&quot;: &quot;32&quot;, &quot;cond&quot;: &quot;Excelente (9.2/10)&quot;, &quot;price&quot;: &quot;$1,650 MXN&quot;, &quot;detail&quot;: &quot;Denim japonés selvedge con orillo rojo, corte recto atemporal y lavado medio con bigotes naturales.&quot;}"><img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Clean minimal flat-lay of vintage straight-leg indigo washed selvedge denim jeans folded with intentional precision against a sterile bright studio backdrop, crisp twill texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSlkANofAEMX-deq8ZeO8Oe6414B5GbKiiWusnbGc_MkWcqIOd-lElN39c7NpQxpT7sYJZ2k0WFoVMro-qXeCU1Mq244SapQIlJPrPIfsSiYavC6Y3LNN-XmpgcQ-KpyW67VF_WGdjKJ3J4qtGhIc2K7a7UEVDGpmvGSPqIV_qqbB9E4hOEzZV8SAvun7mBl5h-iNA_fNkJ78LEwdnGkCMAJJZk823iVx3j_-EOfVcLgthEBjGzgQ"/><button class="absolute top-2.5 right-2.5 z-10 w-7 h-7 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-primary shadow-sm"><span class="material-symbols-outlined text-[15px]">bookmark_border</span></button></div></div></div></div>
+<!-- Bottom Sheet / Modal de Compra y Detalle Completo -->
+<div class="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm flex items-end justify-center hidden opacity-0 transition-opacity duration-200" id="quickBuyModal">
+<div class="w-full max-w-md bg-white rounded-t-2xl p-5 shadow-2xl transform translate-y-full transition-transform duration-300 max-h-[777px] overflow-y-auto" id="modalContent">
+<!-- Manija de arrastre y botón cerrar -->
+<div class="flex items-center justify-between pb-3">
+<div class="w-10 h-1 bg-slate-300 rounded-full mx-auto"></div>
+<button class="w-7 h-7 -mr-1 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" id="closeModalBtn">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Contenido dinámico del producto seleccionado -->
+<div class="flex gap-4 items-start pb-4 border-b border-surface-container">
+<div class="w-20 h-24 rounded-lg overflow-hidden bg-surface-container flex-shrink-0 border border-outline-subtle">
+<img class="w-full h-full object-cover" data-alt="Product detail thumbnail in pristine white studio lighting" id="modalImg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFA6bz1MJbX9I8247c-PymPqeNchDtjmf7a3xoAHpD2r7vPBKcSTlbL4UsU4UZtiv03-ohsWskk85H_jP0GF0VCV3oKStzvHz-as1JnrmBgfwu9YvNbKMx6xLCvPLa2MA7uUE4GkrEllr0l_L798eEmkc1Y6o4yns5UGuhiAyI6erDfWOhqxhwzRlKaPdm0gAt_W87TBSPIjwqk8k9uyJsPseM1sNEpdqdmwtzmqdZ12zwi38JsgE"/>
+</div>
+<div class="flex flex-col flex-1">
+<span class="text-xs font-mono tracking-wider uppercase text-on-surface-variant font-semibold" id="modalBrand">Marca</span>
+<h3 class="text-base font-headline font-bold text-primary mt-0.5 leading-snug" id="modalTitle">Nombre de la prenda</h3>
+<span class="text-lg font-headline font-black text-primary mt-1" id="modalPrice">$0 MXN</span>
+<div class="flex items-center gap-2 mt-2">
+<span class="text-[10px] font-mono uppercase bg-surface-container border border-outline-subtle px-2 py-0.5 rounded text-on-surface font-medium" id="modalCondBadge">Condición</span>
+<span class="text-[10px] font-mono uppercase bg-primary text-white px-2 py-0.5 rounded font-medium" id="modalSizeBadge">Talla</span>
+</div>
+</div>
+</div>
+<!-- Descripción y desglose editorial -->
+<div class="py-3 flex flex-col gap-2">
+<span class="text-[11px] font-mono uppercase text-on-surface-variant tracking-wider">Reporte de Inspección Vértice</span>
+<p class="text-xs text-on-surface leading-relaxed font-body" id="modalDesc">Detalles sobre las costuras, tejido y procedencia.</p>
+</div>
+<!-- Sello de verificación Azul Tinta & Cobalto -->
+<div class="bg-surface-container border border-outline-subtle p-3 rounded-xl flex items-center gap-3 my-2">
+<span class="material-symbols-outlined text-cobalt text-[24px]">verified</span>
+<div class="flex flex-col">
+<span class="text-xs font-headline font-semibold text-primary">Garantía de Autenticidad Vértice</span>
+<span class="text-[11px] text-on-surface-variant font-body">Tu dinero permanece en fideicomiso hasta que recibes y apruebas la prenda.</span>
+</div>
+</div>
+<!-- CTA Principal Añadir al Carrito (Azul Tinta Profundo #0F172A) -->
+<div class="pt-4 flex flex-col gap-2">
+<button class="w-full py-3.5 px-4 bg-primary text-white font-headline font-bold text-sm rounded-xl flex items-center justify-center gap-2 hover:bg-slate-900 active:scale-[0.98] transition-all shadow-md shadow-slate-900/10" id="addToCartBtn">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+<span>Añadir a la Bolsa · Compra Segura</span>
+</button>
+<button class="w-full py-2.5 px-4 bg-transparent text-primary text-xs font-mono uppercase tracking-wider font-semibold hover:bg-surface-container rounded-xl flex items-center justify-center gap-1.5 transition-colors border border-outline-subtle" id="saveItemBtn">
+<span class="material-symbols-outlined text-[16px]">bookmark_border</span>
+<span>Guardar en Deseos</span>
+</button>
+</div>
+<!-- Toast de Confirmación In-Modal -->
+<div class="hidden mt-3 p-2.5 bg-slate-900 text-white rounded-lg text-xs font-mono text-center flex items-center justify-center gap-1.5 animate-fade-in" id="toastSuccess">
+<span class="material-symbols-outlined text-cobalt-light text-[16px]">check_circle</span>
+<span>¡Prenda agregada a tu bolsa con reserva de 15 min!</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Script interactivo de 2 taps y Quick View -->
+<script>
+  (function() {
+    const cards = document.querySelectorAll('.product-card');
+    const modal = document.getElementById('quickBuyModal');
+    const modalContent = document.getElementById('modalContent');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    const saveItemBtn = document.getElementById('saveItemBtn');
+    const toastSuccess = document.getElementById('toastSuccess');
+
+    const modalBrand = document.getElementById('modalBrand');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalPrice = document.getElementById('modalPrice');
+    const modalCondBadge = document.getElementById('modalCondBadge');
+    const modalSizeBadge = document.getElementById('modalSizeBadge');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalImg = document.getElementById('modalImg');
+
+    function openModalWithData(data, imgElem) {
+      modalBrand.textContent = data.brand;
+      modalTitle.textContent = data.title;
+      modalPrice.textContent = data.price;
+      modalCondBadge.textContent = data.cond;
+      modalSizeBadge.textContent = 'Talla: ' + data.size;
+      modalDesc.textContent = data.detail;
+      if (imgElem) {
+        modalImg.src = imgElem.src;
+        modalImg.setAttribute('data-alt', imgElem.getAttribute('data-alt') || 'Detalle de prenda');
+      }
+      toastSuccess.classList.add('hidden');
+
+      modal.classList.remove('hidden');
+      requestAnimationFrame(() => {
+        modal.classList.remove('opacity-0');
+        modalContent.classList.remove('translate-y-full');
+      });
+    }
+
+    function closeModal() {
+      modalContent.classList.add('translate-y-full');
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300);
+    }
+
+    cards.forEach((card, index) => {
+      if (index === 0) {
+        card.dataset.inspected = 'true';
+      } else {
+        card.dataset.inspected = 'false';
+      }
+
+      card.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isInspected = card.dataset.inspected === 'true';
+        const overlay = card.querySelector('.product-overlay');
+        const icon = card.querySelector('.info-icon');
+        const productData = JSON.parse(card.dataset.product);
+        const img = card.querySelector('img');
+
+        if (!isInspected) {
+          // PRIMER TAP: Despliega overlay sin salir de la vista
+          cards.forEach(otherCard => {
+            if (otherCard !== card) {
+              const otherOverlay = otherCard.querySelector('.product-overlay');
+              const otherIcon = otherCard.querySelector('.info-icon');
+              if (otherOverlay) {
+                otherOverlay.classList.add('translate-y-full', 'opacity-0');
+                otherOverlay.classList.remove('translate-y-0', 'opacity-100');
+              }
+              if (otherIcon) otherIcon.textContent = 'touch_app';
+              otherCard.dataset.inspected = 'false';
+            }
+          });
+
+          if (overlay) {
+            overlay.classList.remove('translate-y-full', 'opacity-0');
+            overlay.classList.add('translate-y-0', 'opacity-100');
+          }
+          if (icon) icon.textContent = 'unfold_less';
+          card.dataset.inspected = 'true';
+        } else {
+          // SEGUNDO TAP: Abre modal de detalle completo y compra
+          openModalWithData(productData, img);
+        }
+      });
+    });
+
+    closeModalBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeModal();
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    addToCartBtn.addEventListener('click', () => {
+      toastSuccess.classList.remove('hidden');
+      addToCartBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">done</span> Añadido a tu Bolsa';
+      setTimeout(() => {
+        addToCartBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">shopping_bag</span> Añadir a la Bolsa · Compra Segura';
+      }, 3000);
+    });
+
+    saveItemBtn.addEventListener('click', () => {
+      saveItemBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-cobalt">bookmark</span> Guardado';
+      setTimeout(() => {
+        saveItemBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]">bookmark_border</span> Guardar en Deseos';
+      }, 2000);
+    });
+
+  })();
+</script></main>
+<!-- Tab bar inferior con acento Azul Tinta y botón (+) en #0F172A -->
+<nav class="fixed bottom-0 w-full z-50 pb-safe bg-white/95 backdrop-blur-xl border-t border-outline-subtle shadow-[0_-2px_12px_rgba(15,23,42,0.03)]"><div class="flex justify-between items-center h-16 px-3"><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-primary font-semibold" data-path="inicio" href="#"><span class="material-symbols-outlined text-[22px]">home</span><span class="font-label text-[10px] mt-0.5 tracking-tight">Inicio</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-primary transition-colors" data-path="explorar" href="#"><span class="material-symbols-outlined text-[22px]">explore</span><span class="font-label text-[10px] mt-0.5 tracking-tight">Explorar</span></a><a class="flex flex-col items-center justify-center -mt-4 w-12 h-12 rounded-full bg-primary text-white shadow-[0_4px_16px_rgba(15,23,42,0.35)] hover:bg-slate-900 active:scale-95 transition-all ring-4 ring-white" data-path="vender" href="#"><span class="material-symbols-outlined text-[26px]">add</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-primary transition-colors" data-path="guardados" href="#"><span class="material-symbols-outlined text-[22px]">bookmark</span><span class="font-label text-[10px] mt-0.5 tracking-tight">Guardados</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-primary transition-colors" data-path="perfil" href="#"><span class="material-symbols-outlined text-[22px]">account_circle</span><span class="font-label text-[10px] mt-0.5 tracking-tight">Perfil</span></a></div></nav></body></html>

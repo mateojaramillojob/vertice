@@ -1,0 +1,83 @@
+@import "./tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-surface font-body text-on-surface antialiased;
+    /* Como el handoff: sin rebote; el pull-to-refresh lo maneja la app. */
+    overscroll-behavior-y: none;
+  }
+  /* El teclado de iOS hace zoom si la fuente baja de 16 px (B1). */
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+  /* Foco visible solo con teclado: no cambia nada al tocar. */
+  :focus-visible {
+    outline: 2px solid rgb(var(--cobalt));
+    outline-offset: 2px;
+  }
+  /* Como el handoff: sin barras de scroll visibles (app de celular). */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  html {
+    scrollbar-width: none;
+  }
+  .material-symbols-outlined {
+    display: inline-block;
+    line-height: 1;
+    overflow: hidden;
+    user-select: none;
+    flex-shrink: 0;
+  }
+}
+
+@layer utilities {
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /*
+   * Área táctil de 44 × 44 px sin cambiar el tamaño visual (A5): el pseudo-
+   * elemento invisible crece alrededor del botón. El elemento ya debe tener
+   * position relative o absolute.
+   */
+  .toque-44::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100%, 44px);
+    height: max(100%, 44px);
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* A6: quien pide menos movimiento no ve pulsos infinitos ni zoom en fotos. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

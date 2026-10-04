@@ -1,0 +1,28 @@
+/*
+ * Design tokens de Vértice. Fuente: design/code.html + design/screen.png
+ * (medidos en design/ANALISIS.md §3). Los colores van como canales RGB para
+ * que Tailwind pueda aplicar opacidad (`bg-primary/80`, como en el handoff).
+ */
+:root {
+  --primary: 15 23 42; /* #0F172A azul tinta */
+  --primary-light: 30 41 59; /* #1E293B hover/presionado de primary */
+  --cobalt: 37 99 235; /* #2563EB acento */
+  --cobalt-light: 59 130 246; /* #3B82F6 acento sobre fondo oscuro */
+  --on-primary: 255 255 255; /* #FFFFFF */
+  --on-primary-variant: 203 213 225; /* #CBD5E1 texto secundario sobre oscuro (slate-300 del handoff) */
+
+  --surface: 250 250 250; /* #FAFAFA fondo de página */
+  --surface-container: 241 245 249; /* #F1F5F9 */
+  --surface-container-high: 226 232 240; /* #E2E8F0 */
+  --surface-container-lowest: 255 255 255; /* #FFFFFF tarjetas, barras, sheet */
+  --on-surface: 15 23 42; /* #0F172A */
+  /* Diseño: #64748B. Cambiado a #475569 (B2, aprobado 04-10-2026): 4.34 → 6.9:1 sobre #F1F5F9. */
+  --on-surface-variant: 71 85 105;
+  --outline-subtle: 226 232 240; /* #E2E8F0 */
+  --scrim: 2 6 23; /* #020617 al 60 % detrás del bottom sheet */
+
+  /* Propuesta: el handoff no define estados. */
+  --success: 21 128 61; /* #15803D */
+  --error: 185 28 28; /* #B91C1C */
+  --warning: 180 83 9; /* #B45309 */
+}
