@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import type { Categoria, Prenda } from "@/datos/tipos";
+import type { Categoria } from "@/datos/tipos";
 import { useCatalogo } from "@/datos/consultas";
 import { usePullToRefresh } from "@/hooks/usePullToRefresh";
 import { useScrollInfinito } from "@/hooks/useScrollInfinito";
@@ -9,9 +9,8 @@ import { BannerCustodia } from "@/componentes/BannerCustodia";
 import { EncabezadoSeccion } from "@/componentes/EncabezadoSeccion";
 import { FilaCategorias } from "@/componentes/FilaCategorias";
 import { GrillaOffset } from "@/componentes/GrillaOffset";
-import { HojaCompraRapida } from "@/componentes/HojaCompraRapida";
+import { GrillaPrendas } from "@/componentes/GrillaPrendas";
 import { SubencabezadoCatalogo } from "@/componentes/SubencabezadoCatalogo";
-import { TarjetaPrenda } from "@/componentes/TarjetaPrenda";
 import { BarraBusqueda } from "@/ui/BarraBusqueda";
 import { EstadoError, EstadoVacio } from "@/ui/Estados";
 
@@ -26,19 +25,12 @@ export default function Inicio() {
   const prendas = catalogo.data?.pages.flatMap((p) => p.items) ?? [];
   const total = catalogo.data?.pages[0]?.total ?? 0;
 
-  // Una sola tarjeta abierta a la vez; ninguna al cargar.
-  const [abiertaId, setAbiertaId] = useState<string | null>(null);
-  const [enCompra, setEnCompra] = useState<Prenda | null>(null);
-
   const centinela = useScrollInfinito(() => {
     if (catalogo.hasNextPage && !catalogo.isFetchingNextPage) catalogo.fetchNextPage();
   }, !!catalogo.hasNextPage);
   const refresco = usePullToRefresh(catalogo.refrescar);
 
-  const cambiarCategoria = (c: Categoria | null) => {
-    setCategoria(c);
-    setAbiertaId(null);
-  };
+  const cambiarCategoria = (c: Categoria | null) => setCategoria(c);
 
   return (
     <>
@@ -72,20 +64,8 @@ export default function Inicio() {
               accion={{ texto: "Ver todas", onClick: () => cambiarCategoria(null) }}
             />
           ) : (
-            <GrillaOffset
-              items={prendas}
-              cargando={catalogo.isFetchingNextPage ? 2 : 0}
-              render={(p, i) => (
-                <TarjetaPrenda
-                  key={p.id}
-                  prenda={p}
-                  abierta={abiertaId === p.id}
-                  prioridad={i < 4}
-                  onToque={() => (abiertaId === p.id ? setEnCompra(p) : setAbiertaId(p.id))}
-                  onCerrar={() => setAbiertaId(null)}
-                />
-              )}
-            />
+            // Cambiar de categoría u orden remonta la grilla: se cierra la tarjeta abierta.
+            <GrillaPrendas key={`${categoria}-${orden}`} prendas={prendas} cargando={catalogo.isFetchingNextPage ? 2 : 0} />
           )}
 
           <div ref={centinela} aria-hidden="true" />
@@ -100,8 +80,6 @@ export default function Inicio() {
           )}
         </section>
       </div>
-
-      <HojaCompraRapida prenda={enCompra} onCerrar={() => setEnCompra(null)} />
     </>
   );
 }

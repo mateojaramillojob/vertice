@@ -72,8 +72,32 @@ Capturas: `compra-rapida-414-calco-sobre-render.jpg` (superposición), `compra-r
 - A 360 px el aviso dejaba el ícono solo en una línea y partía "15 / min". Ahora el ícono acompaña al texto y "15 min" va con espacio irrompible.
 
 **Interacciones probadas:**
-- Arrastrar o Esc cierra la hoja.
+- Esc y el botón cerrar cierran la hoja. El arrastre lo maneja vaul; no se probó con un gesto táctil real.
 - "Añadir" cambia el botón durante 3 s y muestra el aviso.
 - La reserva de 15 min se guarda en la bolsa.
 - "Guardar en Deseos" alterna y comparte estado con el marcador de la tarjeta.
 - A 360 × 740 cabe sin scroll.
+
+---
+
+# Pantallas de propuesta (no están en el handoff)
+
+Se revisan contra el lenguaje visual del Inicio: tokens, tipografías, radios, tarjetas y botones. Todas llevan la etiqueta **Propuesta** en el header.
+
+## Detalle de prenda (`/prenda/:id`) 🟠 propuesta
+
+Capturas: `propuesta-detalle-390-*.jpg`.
+
+**Contenido:**
+- Carrusel con swipe (embla): contador "1/3" y puntos de 44 px de área táctil. Las 2 fotos extra son recortes de la misma imagen hasta que lleguen las fotos reales.
+- Marca, título en Bodoni, precio (con precio anterior si bajó), badges.
+- Reporte de inspección y sello de autenticidad.
+- Tabla de datos.
+- Tarjeta de quien vende, con valoración y reseñas.
+- "Más de {nombre}" con la misma grilla de dos toques.
+- CTA fijo abajo. Si la prenda ya está en la bolsa, cambia a "En tu bolsa · Ver bolsa".
+
+**Probado:**
+- Inicio → dos toques → miniatura del sheet → detalle. El sheet se cierra y el body no queda bloqueado.
+- Guardar desde el header comparte estado con la tarjeta.
+- Estado de carga (esqueleto) y "Prenda no disponible" con un id inexistente.

@@ -10,6 +10,7 @@ import NoEncontrada from "@/pantallas/NoEncontrada";
 
 const CatalogoUI = lazy(() => import("@/pantallas/CatalogoUI"));
 const Pendiente = lazy(() => import("@/pantallas/Pendiente"));
+const Detalle = lazy(() => import("@/pantallas/Detalle"));
 
 const consultas = new QueryClient({
   defaultOptions: { queries: { staleTime: 60_000, retry: 1, refetchOnWindowFocus: false } },
@@ -41,7 +42,7 @@ const rutas = createBrowserRouter(
             { path: "perfil", element: perezosa(<Pendiente titulo="Perfil" />) },
           ],
         },
-        { path: "prenda/:id", element: perezosa(<Pendiente titulo="Detalle de prenda" pantalla />) },
+        { path: "prenda/:id", element: perezosa(<Detalle />) },
         { path: "buscar", element: perezosa(<Pendiente titulo="Búsqueda" pantalla />) },
         { path: "notificaciones", element: perezosa(<Pendiente titulo="Notificaciones" pantalla />) },
         { path: "bolsa", element: perezosa(<Pendiente titulo="Bolsa" pantalla />) },
