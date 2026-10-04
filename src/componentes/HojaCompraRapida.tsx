@@ -107,7 +107,7 @@ function Contenido({ prenda, onCerrar }: { prenda: Prenda; onCerrar: () => void 
 
       {avisoVisible && (
         <Aviso className="mt-3">
-          ¡Prenda agregada a tu bolsa con reserva de {MINUTOS_RESERVA} min!{" "}
+          ¡Prenda agregada a tu bolsa con reserva de {MINUTOS_RESERVA}&nbsp;min!{" "}
           {/* B5 (aprobado): el handoff no tenía forma de llegar a la bolsa. */}
           <Link to="/bolsa" onClick={onCerrar} className="relative toque-44 whitespace-nowrap underline underline-offset-2 font-semibold text-cobalt-light">
             Ver bolsa
