@@ -37,7 +37,7 @@ Se construye a partir del handoff de Google Stitch que está en `design/`.
 - `npm run dev` levanta la app en el puerto 8082 (config `vertice` en `../.claude/launch.json`). El catálogo del design system está en **`/ui`**.
 - `npm run build` hace typecheck + build y copia `404.html` para que las rutas profundas funcionen en GitHub Pages (`base: /vertice/`).
 - `?mock=error` en la URL simula fallos de red, para ver los estados de error.
-- Deploy: `.github/workflows/deploy.yml` (copiado de mercar). **Todavía no hay repo remoto ni push.**
+- Deploy: `.github/workflows/deploy.yml` (copiado de mercar); cada push a `main` publica en **https://mateojaramillojob.github.io/vertice/**. Repo público: https://github.com/mateojaramillojob/vertice. Las rutas profundas devuelven HTTP 404 con la app (es el `404.html`), lo normal en GitHub Pages.
 
 ## Estructura
 - `src/estilos/tokens.css`: **única fuente** de colores (canales RGB). `tailwind.config.ts` los expone con los nombres de Stitch.
