@@ -3,6 +3,8 @@
 > Origen: `stitch_visual_circular_fashion_marketplace.zip` (export de Google Stitch, 04-10-2026).
 > Fuente de verdad visual (decidida): **`screen.png` + `code.html`**. `DESIGN.md` se documenta y se descarta (ver §5.3-1).
 > Leyenda: **[M]** = medido (valor del HTML o `getComputedStyle` en el navegador a 414 px) · **[E]** = estimado a ojo sobre el PNG.
+>
+> **Corrección (paso 5):** al superponer el PNG sobre la app se vio que `screen.png` es un render a **390 px** (iPhone 12–15) exportado estirado a 414 (×1.0615; por eso el header del PNG mide 68 px y no 64). El ancho de referencia para comparar es **390 px**. Las medidas [M] siguen valiendo: son px CSS del HTML.
 
 ---
 
@@ -95,7 +97,7 @@ Pude leer todo. No hace falta que mandes otro export.
 
 ### 2.4 Plataforma
 
-- **Solo mobile.** Ancho de referencia **414 px [M]**, DPR 1x. Es una pantalla de app (`<meta name="shell-type" content="mobile_tab">`), con soporte de safe areas (`env(safe-area-inset-*)`).
+- **Solo mobile.** Ancho de referencia **390 px** (el PNG de 414 px es ese render escalado ×1.0615; ver la corrección al inicio). Es una pantalla de app (`<meta name="shell-type" content="mobile_tab">`), con soporte de safe areas (`env(safe-area-inset-*)`).
 - No hay diseño para tablet ni desktop. A 360 px no hay scroll horizontal, pero el overlay de la tarjeta se rompe (§5.4).
 
 ---

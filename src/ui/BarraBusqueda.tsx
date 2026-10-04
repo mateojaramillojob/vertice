@@ -41,7 +41,7 @@ export function BarraBusqueda({ valor, onCambio, onEnviar, onFiltros, filtrosAct
           value={valor}
           onChange={(e) => onCambio(e.target.value)}
           placeholder="Buscar por prenda, corte o tejido..."
-          className="h-[34px] w-full bg-transparent text-on-surface placeholder:text-on-surface-variant focus:outline-none font-body [&::-webkit-search-cancel-button]:hidden"
+          className="h-[34px] w-full min-w-0 text-ellipsis bg-transparent text-on-surface placeholder:text-on-surface-variant focus:outline-none font-body [&::-webkit-search-cancel-button]:hidden"
         />
         {onFiltros && (
           <button

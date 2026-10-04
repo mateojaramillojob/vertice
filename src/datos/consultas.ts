@@ -1,6 +1,6 @@
-import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery, useQuery, useQueryClient, type InfiniteData } from "@tanstack/react-query";
 import { repositorio } from ".";
-import type { FiltrosCatalogo } from "./tipos";
+import type { FiltrosCatalogo, Pagina, Prenda } from "./tipos";
 
 // Hooks de lectura. La UI usa solo estos; no llama al repositorio directamente.
 
@@ -8,12 +8,22 @@ import type { FiltrosCatalogo } from "./tipos";
 export const TAM_PAGINA = 8;
 
 export function useCatalogo(filtros: FiltrosCatalogo) {
-  return useInfiniteQuery({
-    queryKey: ["catalogo", filtros],
+  const qc = useQueryClient();
+  const clave = ["catalogo", filtros];
+  const consulta = useInfiniteQuery({
+    queryKey: clave,
     queryFn: ({ pageParam }) => repositorio.listarPrendas(filtros, pageParam, TAM_PAGINA),
     initialPageParam: null as string | null,
     getNextPageParam: (ultima) => ultima.siguiente,
   });
+  /** Pull-to-refresh: vuelve a la primera página en vez de repedir todas las cargadas. */
+  const refrescar = async () => {
+    qc.setQueryData<InfiniteData<Pagina<Prenda>, string | null>>(clave, (d) =>
+      d ? { pages: d.pages.slice(0, 1), pageParams: d.pageParams.slice(0, 1) } : d,
+    );
+    await consulta.refetch();
+  };
+  return { ...consulta, refrescar };
 }
 
 export function useContarPrendas(filtros: FiltrosCatalogo) {

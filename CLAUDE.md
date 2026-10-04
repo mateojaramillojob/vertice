@@ -48,7 +48,7 @@ Se construye a partir del handoff de Google Stitch que está en `design/`.
 
 ## Convenciones
 - UI en español latinoamericano neutro. Datos mock con marcas, tallas, ciudades y nombres de LATAM. Moneda local (MXN, ARS, COP, CLP) formateada con `Intl.NumberFormat` según el locale.
-- Responsive desde **360 px**. Ancho de referencia del mockup: **414 px**.
+- Responsive desde **360 px**. Ancho de referencia del mockup: **390 px** (`screen.png` mide 414 porque es el render de 390 estirado ×1.0615). Para verificar: superponer el PNG a 390 px de ancho y 50 % de opacidad.
 - Accesibilidad **WCAG AA**: áreas táctiles ≥ 44 px, zoom permitido, `aria-label` en botones de ícono, respetar `prefers-reduced-motion`.
 
 ## Design tokens (provisionales, medidos del handoff; detalle en `design/ANALISIS.md` §3)

@@ -13,13 +13,13 @@ export function Aviso({ tipo = "exito", children, className }: { tipo?: Tipo; ch
     <div
       role="status"
       className={cn(
-        "p-2.5 rounded-lg text-xs font-label text-center flex flex-wrap items-center justify-center gap-1.5",
+        "p-2.5 rounded-lg text-xs font-label text-center flex items-center justify-center gap-1.5",
         tipo === "exito" ? "bg-primary text-white" : "bg-error text-white",
         className,
       )}
     >
       <Icono nombre={tipo === "exito" ? "check_circle" : "error"} tam={16} className={tipo === "exito" ? "text-cobalt-light" : ""} />
-      {children}
+      <span>{children}</span>
     </div>
   );
 }

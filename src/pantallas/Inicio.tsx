@@ -33,7 +33,7 @@ export default function Inicio() {
   const centinela = useScrollInfinito(() => {
     if (catalogo.hasNextPage && !catalogo.isFetchingNextPage) catalogo.fetchNextPage();
   }, !!catalogo.hasNextPage);
-  const refresco = usePullToRefresh(() => catalogo.refetch());
+  const refresco = usePullToRefresh(catalogo.refrescar);
 
   const cambiarCategoria = (c: Categoria | null) => {
     setCategoria(c);
