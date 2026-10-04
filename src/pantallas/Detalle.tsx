@@ -8,7 +8,6 @@ import { GrillaPrendas } from "@/componentes/GrillaPrendas";
 import { MarcoPantalla } from "@/componentes/Marcos";
 import { SelloAutenticidad } from "@/componentes/SelloAutenticidad";
 import { NOMBRE_CATEGORIA } from "@/lib/categorias";
-import { cn } from "@/lib/cn";
 import { fechaMesAnio, haceCuanto } from "@/lib/formato";
 import { Aviso } from "@/ui/Aviso";
 import { Avatar } from "@/ui/Avatar";
@@ -113,9 +112,9 @@ export default function Detalle() {
             etiqueta={guardada ? "Quitar de Guardados" : "Guardar"}
             icono="bookmark"
             relleno={guardada}
+            activo={guardada}
             aria-pressed={guardada}
             onClick={() => alternar(prenda.id)}
-            className={cn(guardada && "text-cobalt hover:text-cobalt")}
           />
         </>
       }

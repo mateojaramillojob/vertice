@@ -1,6 +1,6 @@
 import { useInfiniteQuery, useQuery, useQueryClient, type InfiniteData } from "@tanstack/react-query";
 import { repositorio } from ".";
-import type { FiltrosCatalogo, Pagina, Prenda } from "./tipos";
+import type { FiltrosCatalogo, Notificacion, Pagina, Prenda } from "./tipos";
 
 // Hooks de lectura. La UI usa solo estos; no llama al repositorio directamente.
 
@@ -73,6 +73,15 @@ export function usePrendasDeVendedor(vendedorId: string | undefined) {
 
 export function useNotificaciones() {
   return useQuery({ queryKey: ["notificaciones"], queryFn: () => repositorio.listarNotificaciones() });
+}
+
+/** Marca notificaciones como leídas. Hoy solo cambia la caché local; con backend será una mutación. */
+export function useMarcarLeidas() {
+  const qc = useQueryClient();
+  return (ids?: string[]) =>
+    qc.setQueryData<Notificacion[]>(["notificaciones"], (lista) =>
+      lista?.map((n) => (!ids || ids.includes(n.id) ? { ...n, leida: true } : n)),
+    );
 }
 
 export function useUsuarioActual() {

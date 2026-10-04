@@ -206,7 +206,7 @@ export default function CatalogoUI() {
         </Muestra>
         <Muestra nombre="Botones de ícono · sobre foto (28 px, área 44) y cerrar" className="bg-surface-container-high">
           <BotonIcono etiqueta="Guardar" icono="bookmark" variante="foto-claro" />
-          <BotonIcono etiqueta="Quitar de guardados" icono="bookmark" variante="foto-claro" relleno className="text-cobalt" />
+          <BotonIcono etiqueta="Quitar de guardados" icono="bookmark" variante="foto-claro" relleno activo />
           <BotonIcono etiqueta="Ocultar detalles" icono="unfold_less" variante="foto-oscuro" />
           <BotonIcono etiqueta="Cerrar" icono="close" variante="suave" />
         </Muestra>

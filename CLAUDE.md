@@ -7,14 +7,17 @@ Se construye a partir del handoff de Google Stitch que está en `design/`.
 - [x] Paso 1: handoff descomprimido en `design/` (los originales no se tocan)
 - [x] Paso 2: `design/ANALISIS.md` (revisado; respuestas en §5.7)
 - [x] Paso 3: `design/PROPUESTA.md`, **pendiente de aprobación**
-- [ ] Paso 4: design system (`/ui`) y pantallas
-- [ ] Paso 5: verificación contra el mockup por pantalla, con un commit cada una
+- [x] Paso 4: design system (`/ui`), Inicio y compra rápida (diseñados) y pantallas de propuesta: detalle, búsqueda + filtros, Explorar, Guardados, Perfil, Notificaciones, Bolsa y Vender (en espera)
+- [x] Paso 5: verificación por pantalla en `design/verificacion/VERIFICACION.md`, con capturas y un commit por entrega
+- [ ] **Pendiente de revisión de Mateo:** las pantallas marcadas "Propuesta"
 
 ## Reglas de trabajo
 - Avanzar por etapas y **esperar aprobación** entre pasos.
 - Si el diseño es ambiguo, preguntar; no inventar.
 - No cambiar decisiones de diseño en silencio. Las mejoras se proponen y esperan OK.
-- Las pantallas no diseñadas se marcan como **"propuesta"**.
+- Las pantallas no diseñadas se marcan como **"propuesta"** (`MarcoPantalla` la pone sola; en las pestañas va `<EtiquetaPropuesta />` junto al título).
+- Grillas de prendas: siempre `GrillaPrendas` (dos toques + compra rápida). Para cerrar la tarjeta abierta al cambiar filtros, cambiar su `key`.
+- No pasar clases `text-*` por `className` a `BotonIcono`: usar `activo` o `color` (dos colores chocan por orden del CSS).
 - Por ahora solo frontend con datos mock, con la capa de datos separada para conectar el backend después.
 - Usar los assets del handoff; no sustituirlos sin avisar.
 

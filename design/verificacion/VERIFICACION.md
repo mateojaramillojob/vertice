@@ -130,3 +130,38 @@ Capturas: `propuesta-filtros-390.jpg`, `propuesta-busqueda-390-*.jpg`, `propuest
 - Quitar "Excelente" deja 12.
 - Buscar "zara" con talla M da 2.
 - La búsqueda reciente aparece al volver a `/buscar`.
+
+## Guardados, Perfil, Notificaciones, Bolsa y Vender 🟠 propuesta
+
+Capturas: `propuesta-guardados-390.jpg`, `propuesta-perfil-390.jpg`, `propuesta-notificaciones-390.jpg`, `propuesta-bolsa-390.jpg`.
+
+**Guardados** (pestaña):
+- Grilla de dos toques con lo último guardado primero.
+- Estado vacío con acción al catálogo.
+
+**Perfil** (pestaña):
+- Avatar con iniciales, ciudad, antigüedad y valoración.
+- Cifras: ventas, compras y valoración.
+- Armario y reseñas.
+- Aviso de que pedidos y ventas esperan el modelo de negocio.
+
+**Notificaciones** (campana):
+- Secciones "Nuevas" y "Anteriores", con ícono por tipo (bajó de precio, inspección, guardado, envío, sistema).
+- Las de precio enlazan a la prenda.
+- "Marcar leídas" quita el punto de la campana; probado ida y vuelta dentro de la app.
+
+**Bolsa** (desde "Ver bolsa", B5):
+- Contador de la reserva de 15 min, en naranja cuando faltan menos de 3 min. Las prendas vencidas salen solas.
+- Quitar prenda y subtotal.
+- "Continuar al pago" deshabilitado, con la nota de que espera el modelo de negocio.
+
+**Vender** (FAB "+"):
+- Pantalla de espera: el flujo de publicar depende del modelo de negocio.
+
+**Encontrado y corregido:**
+- El marcador guardado se veía azul tinta en vez de cobalto: `text-primary` de la variante le ganaba a `text-cobalt` por orden del CSS. `BotonIcono` ahora tiene `activo` y `color`.
+- La flecha de volver de las pantallas secundarias se veía gris por el mismo motivo.
+
+**Revisión general a 360 px:** 10 rutas (`/explorar`, `/guardados`, `/perfil`, `/notificaciones`, `/bolsa`, `/vender`, `/buscar?…`, `/prenda/3`, `/ui`, 404), sin scroll horizontal ni errores.
+
+**Pantalla ancha:** header, contenido y tab bar en una columna centrada de 480 px (C9).

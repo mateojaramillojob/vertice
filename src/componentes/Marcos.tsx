@@ -47,7 +47,7 @@ export function MarcoPantalla({ titulo, propuesta = true, acciones, pie, childre
     <>
       <header className="fixed top-0 inset-x-0 mx-auto w-full max-w-app z-40 bg-white/90 backdrop-blur-xl pt-safe border-b border-outline-subtle/80 shadow-header">
         <div className="h-16 px-2 flex items-center gap-1">
-          <BotonIcono etiqueta="Volver" icono="arrow_back" onClick={volver} className="text-primary" />
+          <BotonIcono etiqueta="Volver" icono="arrow_back" onClick={volver} color="text-primary" />
           <h1 className="flex-1 min-w-0 truncate font-headline text-base font-bold text-primary">{titulo}</h1>
           {propuesta && <EtiquetaPropuesta className="mr-1" />}
           {acciones}
